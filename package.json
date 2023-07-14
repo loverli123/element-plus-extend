@@ -22,17 +22,10 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs"
   },
-  "peerDependencies": {
+  "dependencies": {
+    "element-plus": "^2.3.7",
     "@element-plus/icons-vue": "^1.1.4",
     "vue": "^3.2.33"
-  },
-  "dependencies": {
-    "babel-plugin-prismjs": "^2.1.0",
-    "element-plus": "^2.3.7",
-    "element-plus-crx": "^1.0.11",
-    "element-plus-extend": "^0.0.9",
-    "prismjs": "^1.26.0",
-    "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@tsconfig/node18": "^2.0.1",

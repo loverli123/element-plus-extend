@@ -69,9 +69,4 @@
 | ......        |   -     |    -     | [Input其他 属性](https://element-plus.gitee.io/zh-CN/component/input.html#attributes)|
 
 
-<script setup>
-  import { ref } from 'vue';
-  const val = ref('');
-  const xuanze = ref('01');
-</script>
 
