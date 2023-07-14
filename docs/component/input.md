@@ -66,10 +66,10 @@
 | :-----------: | :-----------:        | :----:  | ---   |
 | placeholder   | `string`             | 请输入   | ---   |
 | maxlength     |  `string` / `number` |   50    |---   |
-| ......        |      -               |    -       | [Input其他 属性](https://element-plus.gitee.io/zh-CN/component/input.html#attributes)
+| ......        |   -     |    -     | [Input其他 属性](https://element-plus.gitee.io/zh-CN/component/input.html#attributes)|
 
 
-<script lang="ts" setup>
+<script setup>
   import { ref } from 'vue';
   const val = ref('');
   const xuanze = ref('01');
