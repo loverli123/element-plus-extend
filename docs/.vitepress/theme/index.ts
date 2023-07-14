@@ -1,6 +1,6 @@
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import ElementPlus from 'element-plus'
-import ElementPlusExtend from 'element-plus-extend'
+import ElementPlusExtend from '../../../packages'
 const exampleComponents = (import.meta as any).globEager("../../examples/*.vue");
 
 import 'element-plus/dist/index.css'

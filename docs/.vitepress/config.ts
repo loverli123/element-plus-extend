@@ -1,7 +1,3 @@
-//import { features, head, mdPlugin, nav, sidebars } from './config'
-
-import path from 'path'
-
 module.exports = {
   title: "Element Plus Extend",// 网站标题
   description: '网站描述', //网站描述
@@ -61,9 +57,5 @@ module.exports = {
   lastUpdated: true,
   markdown:{
     lineNumbers: true,
-    // importCode: {
-    //   handleImportPath: (str) =>
-    //     str.replace(/^@example/, path.resolve(__dirname, "../../example/")),
-    // },
   }
 }
