@@ -1,7 +1,7 @@
 module.exports = {
   title: "Element Plus Extend",// 网站标题
   description: '网站描述', //网站描述
-  base: '/element-plus-extend', //  部署时的路径 默认 /  可以使用二级地址 /base/
+  base: '/element-plus-extend/', //  部署时的路径 默认 /  可以使用二级地址 /base/
   // lang: 'en-US', //语言
   repo: 'vuejs/vitepress',
   head: [[

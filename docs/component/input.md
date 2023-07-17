@@ -6,9 +6,12 @@
 
 ## 基础使用
 
-<CardCode header="输入框">
-  <lc-input v-model="val"></lc-input>
-</CardCode>
+<ClientOnly>
+  <CardCode header="输入框">
+    <lc-input v-model="val"></lc-input>
+  </CardCode>
+</ClientOnly>
+
 
 ::: details 查看源码
 ::: code-group
@@ -20,9 +23,11 @@
 
 ## 搜索框
 
-<CardCode header="搜索框">
-  <lc-input-search v-model="val"></lc-input-search>
-</CardCode>
+<ClientOnly>
+  <CardCode header="搜索框">
+    <lc-input-search v-model="val"></lc-input-search>
+  </CardCode>
+</ClientOnly>
 
 ::: details 查看源码
 ::: code-group

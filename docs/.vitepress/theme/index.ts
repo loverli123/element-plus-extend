@@ -12,9 +12,8 @@ import DefaultTheme from 'vitepress/theme'
 export default {
   ...DefaultTheme,
   enhanceApp: ({ app }) => {
-    
-    app.use(ElementPlusExtend)
     app.use(ElementPlus)
+    app.use(ElementPlusExtend)
     // icon
     for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
       app.component(key, component)
