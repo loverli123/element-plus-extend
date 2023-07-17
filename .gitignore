@@ -12,7 +12,6 @@ lerna-debug.log*
 src
 index.html
 public
-pnpm-lock.yaml
 
 node_modules
 dist
