@@ -7,9 +7,7 @@
 ## 基础使用
 
 <ClientOnly>
-  <CardCode header="输入框">
-    <lc-input v-model="val"></lc-input>
-  </CardCode>
+  <InputInput />
 </ClientOnly>
 
 
@@ -24,9 +22,7 @@
 ## 搜索框
 
 <ClientOnly>
-  <CardCode header="搜索框">
-    <lc-input-search v-model="val"></lc-input-search>
-  </CardCode>
+  <InputSearch />
 </ClientOnly>
 
 ::: details 查看源码
@@ -39,9 +35,10 @@
 
 ## 身份证件
 
-<CardCode header="身份证件">
-  <lc-input-idnumber v-model="val" v-model:xuanze="xuanze"></lc-input-idnumber>
-</CardCode>
+<ClientOnly>
+  <InputIdnumber />
+</ClientOnly>
+
 
 ::: details 查看源码
 ::: code-group
@@ -53,9 +50,9 @@
 
 ## URL
 
-<CardCode header="URL">
-  <lc-input-url v-model="val"></lc-input-url>
-</CardCode>
+<ClientOnly>
+  <InputUrl />
+</ClientOnly>
 
 ::: details 查看源码
 ::: code-group
@@ -72,6 +69,5 @@
 | placeholder   | `string`             | 请输入   | ---   |
 | maxlength     |  `string` / `number` |   50    |---   |
 | ......        |   -     |    -     | [Input其他 属性](https://element-plus.gitee.io/zh-CN/component/input.html#attributes)|
-
 
 
