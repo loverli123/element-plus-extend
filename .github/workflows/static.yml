@@ -36,20 +36,18 @@ jobs:
         with:
           # 选择要使用的 pnpm 版本
           version: 8
-          # 使用 pnpm 安装依赖
-          run_install: true
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           # 选择要使用的 node 版本
-          node-version: 18
+          node-version: 16
           # 缓存 pnpm 依赖
           cache: pnpm
-          
+      - name: Run
+        run: pnpm install
       # 运行构建脚本
       - name: Build VitePress site
         run: pnpm docs:build    
-          
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v1
         with:
