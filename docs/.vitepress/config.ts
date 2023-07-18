@@ -42,7 +42,7 @@ module.exports = {
         text: 'Form 表单组件',
         items: [
           { text: 'Inpu 输入框', link: '/component/input.md' },
-          { text: 'Item B', link: '/item-b' },
+          { text: 'DatePicker 日期选择器', link: '/component/datePicker.md' },
         ]
       },
       {

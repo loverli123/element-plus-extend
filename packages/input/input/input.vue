@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 defineOptions({
-  name: 'input',
+  name: 'lc-input',
 })
 </script>
 

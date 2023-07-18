@@ -9,9 +9,6 @@ lerna-debug.log*
 .temp
 .cache
 .DS_Store
-src
-index.html
-public
 
 node_modules
 dist

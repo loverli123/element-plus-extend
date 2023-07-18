@@ -15,7 +15,7 @@
 import { ref, computed } from 'vue';
 
 defineOptions({
-  name: 'input-url',
+  name: 'lc-input-url',
 })
 
 const props = defineProps({

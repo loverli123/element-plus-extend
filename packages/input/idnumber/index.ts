@@ -3,7 +3,7 @@ import Idnumber from './idnumber.vue'
 
 // 为组件添加 install 方法，用于按需引入
 Idnumber.install = function (App : any) {
-    App.component('lc-' + Idnumber.name, Idnumber)
+    App.component(Idnumber.name, Idnumber)
 }
 
 export default Idnumber

@@ -3,7 +3,7 @@ import Input from './input.vue'
 
 // 为组件添加 install 方法，用于按需引入
 Input.install = function (App : any) {
-    App.component('lc-' + Input.name, Input)
+    App.component(Input.name, Input)
 }
 
 export default Input

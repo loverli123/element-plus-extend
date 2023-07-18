@@ -1,13 +1,13 @@
 # Input 输入框
 
-快速的数据化配置一个下拉框，常用于搭配数据表单。
+快速的数据化配置一个输入框，常用于搭配数据表单。
 
 依赖组件： `ElInput` `ElSelect`，需先全局注册。
 
 ## 基础使用
 
 <ClientOnly>
-  <InputInput />
+  <InputDefault />
 </ClientOnly>
 
 

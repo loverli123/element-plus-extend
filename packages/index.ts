@@ -1,13 +1,20 @@
+// input输入框
 import idnumber from './input/idnumber'
 import input from './input/input'
 import search from './input/search'
 import url from './input/url'
 
+// datePicker 日期选择器
+import datePicker from './datePicker/datePicker'
+import dateRange from './datePicker/dateRange'
+
 export {
   idnumber,
   input,
   search,
-  url
+  url,
+  datePicker,
+  dateRange
 }
 
 export default {
@@ -16,8 +23,10 @@ export default {
       idnumber,
       input,
       search,
-      url
+      url,
+      datePicker,
+      dateRange
     ]
-    components.forEach(el => app.component('lc-' + el.name, el))
+    components.forEach(el => app.component(el.name, el))
   },
 }

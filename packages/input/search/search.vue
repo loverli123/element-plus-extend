@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 defineOptions({
-  name: 'input-search',
+  name: 'lc-input-search',
 })
 
 import { Search } from '@element-plus/icons-vue'

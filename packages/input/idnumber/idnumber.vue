@@ -19,7 +19,7 @@
 import { ref, computed } from 'vue';
 
 defineOptions({
-  name: 'input-idnumber',
+  name: 'lc-input-idnumber',
 })
 
 const props = defineProps({

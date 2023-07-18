@@ -1,6 +1,7 @@
 <template>
-  <CardCode header="搜索框">
-    <lc-input-search v-model="val"></lc-input-search>
+  <CardCode header="日期范围选择器">
+    <lc-date-range v-model="val"></lc-date-range>
+    <lc-input v-model="val" style="margin-top: 20px;"></lc-input>
   </CardCode>
 </template>
 

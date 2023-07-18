@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import prismjs from 'vite-plugin-prismjs'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,16 +8,18 @@ export default defineConfig({
       entry:"packages/index.ts",
       name:'element-plus-extend',
       fileName:'ep-extend'
+    },
+    rollupOptions: {
+      output:{
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+              return id.toString().split('node_modules/')[1].split('/')[0].toString();
+          }
+        }
+      }
     }
   },
   plugins: [
     vue(),
-    prismjs({
-      "languages": ["javascript", "css", "markup"],
-      "plugins": ["toolbar", "line-numbers", "copy-to-clipboard"], //配置显示行号插件
-      // 主题名称,支持的主题可以在 node_moduels中安装此库的目录下寻找。
-      theme: "tomorrow",
-      css: true
-    })
   ]
 })
