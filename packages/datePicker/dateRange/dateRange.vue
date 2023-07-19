@@ -10,19 +10,26 @@
     :default-time="defaultTime"
     >
     <template #default="cell">
-        <div class="cell el-date-table-cell" :class="{ current: cell.isCurrent }">
-          <span class="el-date-table-cell__text" :class="{ weekend: cell.type != 'next-month' && cell.type != 'prev-month' && (cell.column == 5 || cell.column == 6) , 
-            notInMonth: (cell.column == 5 || cell.column == 6) && (cell.type == 'next-month' || cell.type == 'prev-month')}">
-            {{ cell.text }}
-          </span>
-        </div>
-      </template>
-    </el-date-picker>
+      <div class="cell el-date-table-cell" :class="{ current: cell.isCurrent }">
+        <span v-if="isHoliday(cell) == 1" class="el-date-table-cell__text" 
+        :class="{ weekend: cell.type != 'next-month' && cell.type != 'prev-month',
+        notInMonth: (cell.type == 'next-month' || cell.type == 'prev-month')}">
+          {{ cell.text }}
+        </span>
+        <span v-else class="el-date-table-cell__text"
+        :class="{ work: cell.type != 'next-month' && cell.type != 'prev-month' , 
+        workInMonth: (cell.type == 'next-month' || cell.type == 'prev-month')}">
+          {{ cell.text }}
+        </span>
+      </div>
+    </template>
+  </el-date-picker>
 </template>
 
 <script lang="ts" setup>
 import { dayjs } from 'element-plus';
 import { ref } from 'vue';
+import { offDays, onDays} from '../../Resources';
 
 defineOptions({
   name: 'lc-date-range',
@@ -34,6 +41,23 @@ const defaultTime = ref<[Date, Date]>([
   new Date(2000, 1, 1, 0, 0, 0),
   new Date(2000, 2, 1, 23, 59, 59),
 ])
+
+const isHoliday = ({ dayjs, column }) => {
+  const offDay = offDays.includes(dayjs.format('YYYY-MM-DD'));
+  if(offDay){
+    return 1;
+  }
+  const onDay = onDays.includes(dayjs.format('YYYY-MM-DD'));
+  if(onDay){
+    return 0;
+  }
+  if(column == 5 || column == 6){
+    return 1;
+  }
+  else{
+    return 0;
+  }
+}
 
 const shortcuts = [
   {
@@ -101,12 +125,35 @@ const shortcuts = [
 </script>
 
 <style scoped>
-
+.cell{
+  font-family:baidunumber-Medium;
+}
 .cell .weekend {
   color: #eb3333;
 }
 
 .cell .notInMonth {
-  color: #8e1e1e;
+  color: #eb3333;
+  opacity: .3;
+}
+
+.cell .work {
+  color: var(--el-text-color-regular);
+}
+
+.cell .worknotInMonth {
+  opacity: .3;
+}
+
+.el-date-table-cell__text {
+  border-radius: .12rem !important;
+}
+
+.dark .el-date-table-cell__text:hover {
+  background-color: rgba(255,255,255,.08) !important;
+}
+
+.el-date-table-cell__text:hover {
+  background-color: #f5f5f5 !important;
 }
 </style>

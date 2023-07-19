@@ -52,10 +52,13 @@ module.exports = {
           { text: 'Item B', link: '/item-b' },
         ]
       }
+    ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/loverli123/element-plus-extend' },
     ]
   },
   lastUpdated: true,
   markdown:{
     lineNumbers: true,
-  }
+  },
 }
