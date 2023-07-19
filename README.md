@@ -1,40 +1,59 @@
 # element-plus-extend
 
-This template should help get you started developing with Vue 3 in Vite.
+<p align="center">
+  <a href="https://www.npmjs.org/package/element-plus-extend">
+    <img src="https://img.shields.io/npm/v/element-plus-extend.svg">
+  </a>
+  <a href="https://npmcharts.com/compare/element-plus-extend?minimal=true">
+    <img src="https://img.shields.io/npm/dm/element-plus-extend.svg">
+  </a>
+  <br>
+</p>
 
-## Recommended IDE Setup
+<p align="center">基于Element Plus的扩展Vue.js 3组件库</p>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- 💪 Vue 3 
+- 🔥 TypeScript
 
-## Type Support for `.vue` Imports in TS
+## 文档
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- [中文说明文档](https://loverli123.github.io/element-plus-extend/) 
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## 安装
 
 ```sh
-npm install
+pnpm install element-plus-extend
 ```
 
-### Compile and Hot-Reload for Development
+```ts
+// main.ts
+import { createApp } from 'vue'
+import ElementPlus from "element-plus";
+import ElementPlusExtend from "element-plus-crx";
+import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
-```sh
-npm run dev
+import App from './App.vue'
+
+const app = createApp(App)
+app.use(ElementPlus);
+app.use(ElementPlusExtend);
+
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component);
+}
+
+app.mount('#app')
 ```
 
-### Type-Check, Compile and Minify for Production
+## 使用
 
-```sh
-npm run build
+```vue
+<template>
+  <lc-input v-model="val"></lc-input>
+</template>
+
+<script lang="ts" setup>
+  import { ref } from 'vue';
+  const val = ref('');
+</script>
 ```
