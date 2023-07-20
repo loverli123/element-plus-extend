@@ -1,8 +1,13 @@
 {
   "name": "element-plus-extend",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "elementplus组件封装",
   "main": "packages/index.ts",
+  "homepage": "https://github.com/loverli123/element-plus-extend",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loverli123/element-plus-extend.git"
+  },
   "keywords": [
     "vue",
     "element",

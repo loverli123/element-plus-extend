@@ -1,7 +1,7 @@
 <template>
-  <el-input class="c-input-idnumber" placeholder="请输入证件号码" :maxlength="inputlength" clearable>
-    <template #prepend>
-      <el-select v-model="xuanze" style="width: 100px;" @change="selchang">
+  <el-input class="lc-input-idnumber" placeholder="请输入证件号码" :maxlength="changDu" clearable>
+    <template v-if="showXuanZe" #prepend>
+      <el-select v-model="xuanZe" style="width: 100px;" @change="selchang">
         <el-option label="身份证" value="01" />
         <el-option label="户口簿" value="02" />
         <el-option label="护照" value="03" />
@@ -23,61 +23,61 @@ defineOptions({
 })
 
 const props = defineProps({
-  xuanze: {
+  xuanZe: {
     type: String,
     default: '01'
   },
-  inputlength:{
+  changDu:{
     type: String,
     default: '18'
-  }
+  },
+  showXuanZe:{
+    type: Boolean,
+    default: true
+  },
 });
 
-const emit = defineEmits(['update:xuanze'])
+const emit = defineEmits(['update:xuanZe'])
 
-const xuanze = computed({
+const xuanZe = computed({
   get() {
-    return props.xuanze
+    return props.xuanZe
   },
   set(value) {
-    emit('update:xuanze', value)
+    emit('update:xuanZe', value)
   }
 })
 
-const inputlength = ref(props.inputlength);
+const changDu = ref(props.changDu);
 
 const selchang = (value : string) =>{
   if(value === '01'){
-    inputlength.value = '18';
+    changDu.value = '18';
   }
   else if(value === '02' || value === '03'){
-    inputlength.value = '9';
+    changDu.value = '9';
   }
   else if(value === '04'){
-    inputlength.value = '10';
+    changDu.value = '10';
   }
   else if(value === '05'){
-    inputlength.value = '12';
+    changDu.value = '12';
   }
   else if(value === '06'){
-    inputlength.value = '11';
+    changDu.value = '11';
   }
   else if(value === '07'){
-    inputlength.value = '09';
+    changDu.value = '09';
   }
   else{
-    inputlength.value = '50';
+    changDu.value = '50';
   }
 }
 </script>
 
 <style>
-.c-input-idnumber > .el-input__wrapper {
-  .el-input__inner {
-    font-size: 20px;
-    letter-spacing: 15px;
-  }
+.lc-input-idnumber > .el-input__wrapper > .el-input__inner {
+  font-size: 20px;
+  letter-spacing: 15px;
 }
-
-
 </style>

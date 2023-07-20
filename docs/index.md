@@ -16,5 +16,4 @@ features:
     details: 更多丰富的扩展组件，在 ElementPlus 没有找到的这里或许会有
   - title: 快捷的使用
     details: 内置双语言，黑暗模式适配，完整的typescript提示，更方便的全局配置
-footer: MIT Licensed | Copyright ©agrss
 ---

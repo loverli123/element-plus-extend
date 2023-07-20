@@ -43,7 +43,8 @@
 ::: details 查看源码
 ::: code-group
 ```vue [使用]
- <lc-input-idnumber v-model="val" v-model:xuanze="xuanze"></lc-input-idnumber>
+<lc-input-idnumber v-model="val" v-model:xuanZe="xuanZe"></lc-input-idnumber>
+<lc-input-idnumber v-model="val" :showXuanZe="false"></lc-input-idnumber>
 ```
 <<< ../../packages/input/idnumber/idnumber.vue[源码]
 :::

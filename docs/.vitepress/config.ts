@@ -55,7 +55,11 @@ module.exports = {
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/loverli123/element-plus-extend' },
-    ]
+    ],
+    footer: {
+      message: 'MIT Licensed',
+      copyright: 'Copyright © 2023 <a href="https://github.com/loverli123" target="_blank">潇洒系在</a>'
+    }
   },
   lastUpdated: true,
   markdown:{
